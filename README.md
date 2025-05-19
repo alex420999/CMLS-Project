@@ -1,84 +1,67 @@
-# POLIcalling
+<h1 align="center">POLIcalling</h1>
 
 ## Index
 
-1. [SuperCollider](#supercollider)
-   a. [Paragrafo A](#paragrafo-a)
-   b. [Paragrafo B](#paragrafo-b)
-   c. [Paragrafo C](#paragrafo-c)
+1. [SuperCollider](#supercollider)  
+   a. [Introduzione a SuperCollider](#introduzione-a-supercollider)  
+   b. [Configurazione](#configurazione)  
 
-2. [Processing](#processing)
-   a. [Paragrafo A](#paragrafo-a-1)
-   b. [Paragrafo B](#paragrafo-b-1)
+2. [Processing](#processing)  
+   a. [Introduzione a Processing](#introduzione-a-processing)  
+   b. [Esempi di codice](#esempi-di-codice)  
 
-3. [JUCE](#juce)
-   a. [Paragrafo A](#paragrafo-a-2)
-   b. [Paragrafo B](#paragrafo-b-2)
-   c. [Paragrafo C](#paragrafo-c-2)
+3. [JUCE](#juce)  
+   a. [Panoramica](#panoramica)  
+   b. [Setup ambiente](#setup-ambiente)  
 
-4. [Arduino](#arduino)
-   a. [Paragrafo A](#paragrafo-a-3)
-   b. [Paragrafo B](#paragrafo-b-3)
+4. [Arduino](#arduino)  
+   a. [Hardware e sensori](#hardware-e-sensori)  
+   b. [Programmazione base](#programmazione-base)  
 
 ---
 
-## Introduzione
+## SuperCollider
 
-Questa è una breve introduzione generale a POLIcalling. [Qui potrai inserire il testo introduttivo che preferisci.]
+### Introduzione a SuperCollider
 
----
+Testo introduttivo a SuperCollider.
 
-## 1. SuperCollider
+### Configurazione
 
-### a. Paragrafo A
-
-Testo del paragrafo A.
-
-### b. Paragrafo B
-
-Testo del paragrafo B.
-
-### c. Paragrafo C
-
-Testo del paragrafo C.
+Dettagli sulla configurazione di SuperCollider.
 
 ---
 
-## 2. Processing
+## Processing
 
-### a. Paragrafo A
+### Introduzione a Processing
 
-Testo del paragrafo A.
+Testo introduttivo a Processing.
 
-### b. Paragrafo B
+### Esempi di codice
 
-Testo del paragrafo B.
-
----
-
-## 3. JUCE
-
-### a. Paragrafo A
-
-Testo del paragrafo A.
-
-### b. Paragrafo B
-
-Testo del paragrafo B.
-
-### c. Paragrafo C
-
-Testo del paragrafo C.
+Alcuni esempi pratici.
 
 ---
 
-## 4. Arduino
+## JUCE
 
-### a. Paragrafo A
+### Panoramica
 
-Testo del paragrafo A.
+Descrizione generale su JUCE.
 
-### b. Paragrafo B
+### Setup ambiente
 
-Testo del paragrafo B.
+Come configurare l’ambiente JUCE.
 
+---
+
+## Arduino
+
+### Hardware e sensori
+
+Descrizione dell’hardware e dei sensori usati.
+
+### Programmazione base
+
+Nozioni base di programmazione Arduino.
