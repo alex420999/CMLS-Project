@@ -1,5 +1,12 @@
 <h1 align="center">POLIcalling</h1>
 
+## Introduzione
+
+POLIcalling è un progetto che mira a [qui inserisci la tua descrizione sintetica: es. creare un sistema integrato per... ecc.].  
+L’obiettivo è fornire strumenti e moduli software per facilitare l’interazione tra diversi ambienti come SuperCollider, Processing, JUCE e Arduino, permettendo una sinergia creativa tra musica, grafica e hardware.
+
+---
+
 ## Index
 
 1. [SuperCollider](#supercollider)  
