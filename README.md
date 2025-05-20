@@ -14,66 +14,50 @@ Infine, grazie all’uso del dispositivo Arduino UNO il progetto offre all’ute
 
 ## Index
 
-1. [SuperCollider](#supercollider)  
-   a. [Introduzione a SuperCollider](#introduzione-a-supercollider)  
-   b. [Configurazione](#configurazione)  
+1. [Synth Module](#synth-module)  
+   a. [Introduzione al Synth Module](#introduzione-al-synth-module)  
+   b. [Configurazione e parametri](#configurazione-e-parametri)  
 
-2. [Processing](#processing)  
-   a. [Introduzione a Processing](#introduzione-a-processing)  
-   b. [Esempi di codice](#esempi-di-codice)  
+2. [Music Effects Module](#music-effects-module)  
+   a. [Panoramica sugli effetti](#panoramica-sugli-effetti)  
+   b. [Implementazione e controllo](#implementazione-e-controllo)  
 
-3. [JUCE](#juce)  
-   a. [Panoramica](#panoramica)  
-   b. [Setup ambiente](#setup-ambiente)  
-
-4. [Arduino](#arduino)  
+3. [Arduino UNO Module](#arduino-uno-module)  
    a. [Hardware e sensori](#hardware-e-sensori)  
-   b. [Programmazione base](#programmazione-base)  
+   b. [Programmazione base e interazione](#programmazione-base-e-interazione)  
 
 ---
 
-## SuperCollider
+## Synth Module
 
-### Introduzione a SuperCollider
+### Introduzione al Synth Module
 
-Testo introduttivo a SuperCollider.
+Testo introduttivo al modulo sintetizzatore.
 
-### Configurazione
+### Configurazione e parametri
 
-Dettagli sulla configurazione di SuperCollider.
-
----
-
-## Processing
-
-### Introduzione a Processing
-
-Testo introduttivo a Processing.
-
-### Esempi di codice
-
-Alcuni esempi pratici.
+Dettagli sulla configurazione e i parametri regolabili del sintetizzatore.
 
 ---
 
-## JUCE
+## Music Effects Module
 
-### Panoramica
+### Panoramica sugli effetti
 
-Descrizione generale su JUCE.
+Descrizione generale degli effetti sonori implementati.
 
-### Setup ambiente
+### Implementazione e controllo
 
-Come configurare l’ambiente JUCE.
+Come vengono realizzati e controllati gli effetti.
 
 ---
 
-## Arduino
+## Arduino UNO Module
 
 ### Hardware e sensori
 
-Descrizione dell’hardware e dei sensori usati.
+Descrizione dell’hardware e dei sensori utilizzati.
 
-### Programmazione base
+### Programmazione base e interazione
 
-Nozioni base di programmazione Arduino.
+Nozioni base di programmazione Arduino e modalità di interazione con il sintetizzatore.
