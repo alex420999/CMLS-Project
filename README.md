@@ -34,13 +34,15 @@ La sintesi sonora vera e propria è implementata con SuperCollider, che garantis
 
 ## Music Effects Module
 
-### Panoramica sugli effetti
+Il segnale audio, dopo essere stato elaborato da SuperCollider, ritorna nella DAW dove può essere indirizzato a una traccia audio dedicata. Su questa traccia, gli effetti sonori creati con la potenza e la flessibilità di JUCE vengono applicati in cascata, offrendo una nuova dimensione espressiva al suono.
 
-Descrizione generale degli effetti sonori implementati.
+Gli effetti principali sviluppati per POLIcalling sono il Chorus e il Riverbero, realizzati interamente con la tecnologia JUCE, che permettono di arricchire il timbro con profondità, movimento e spazialità, ampliando notevolmente le possibilità creative.
 
-### Implementazione e controllo
+a. **Chorus**  
+Il modulo Chorus consente di modulare la ricchezza e la complessità del suono tramite parametri come la profondità, la velocità di modulazione e il mix tra segnale originale e effetto, permettendo di ottenere da lievi variazioni a texture sonore molto corpose.
 
-Come vengono realizzati e controllati gli effetti.
+b. **Riverbero**  
+Il Riverbero offre un controllo preciso su parametri fondamentali quali il tempo di decadimento, la dimensione della stanza simulata e la quantità di segnale riverberato, regalando un senso di spazio naturale o evocativo a seconda delle esigenze artistiche.
 
 ---
 
