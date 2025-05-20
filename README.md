@@ -16,6 +16,8 @@ Infine, grazie all’uso del dispositivo Arduino UNO il progetto offre all’ute
 
 1. [Synth Module](#synth-module)  
 2. [Music Effects Module](#music-effects-module)  
+   a. [Chorus](#chorus)  
+   b. [Riverbero](#riverbero)  
 3. [Arduino UNO Module](#arduino-uno-module)  
 
 ---
@@ -38,10 +40,12 @@ Il segnale audio, dopo essere stato elaborato da SuperCollider, ritorna nella DA
 
 Gli effetti principali sviluppati per POLIcalling sono il Chorus e il Riverbero, realizzati interamente con la tecnologia JUCE, che permettono di arricchire il timbro con profondità, movimento e spazialità, ampliando notevolmente le possibilità creative.
 
-a. **Chorus**  
+### a. Chorus
+
 Il modulo Chorus consente di modulare la ricchezza e la complessità del suono tramite parametri come la profondità, la velocità di modulazione e il mix tra segnale originale e effetto, permettendo di ottenere da lievi variazioni a texture sonore molto corpose.
 
-b. **Riverbero**  
+### b. Riverbero
+
 Il Riverbero offre un controllo preciso su parametri fondamentali quali il tempo di decadimento, la dimensione della stanza simulata e la quantità di segnale riverberato, regalando un senso di spazio naturale o evocativo a seconda delle esigenze artistiche.
 
 ---
