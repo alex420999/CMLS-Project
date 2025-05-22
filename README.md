@@ -47,36 +47,36 @@ The main effects developed for POLIcalling are Chorus and Reverb, implemented en
 ### a. Chorus
 
 - **Rate**  
-  Defines the oscillation frequency of the LFO that modulates the delay time. Low rate settings produce slow, undulating modulations; high values yield fast, vibrato-like effects.
+  Defines the oscillation frequency of the LFO that modulates the delay time. Low rate settings produce slow, undulating modulations while high values yield fast as a vibrato-like effects.
 
 - **Depth**  
-  Determines how much the LFO deviates the delay time. Low depth yields subtle, natural chorus; higher depth produces wider pitch excursions and a more “liquid” character.
+  Determines how much the LFO deviates the delay time. Low depth yields subtle and natural chorus while higher depth produces wider pitch excursions.
 
 - **CentreDelay**  
-  Sets the base delay time around which the LFO applies modulation. Short centreDelay creates a bright, tight chorus; longer values make the effect more pronounced, approaching a modulated doubling.
+  Sets the base delay time around which the LFO applies modulation. Short centreDelay creates a bright, tight chorus while longer values make the effect more pronounced approaching a modulated doubling.
 
 - **Feedback**  
-  Controls how much of the processed signal is fed back into the chorus loop. Positive feedback reinforces the effect’s resonance; negative feedback introduces phase inversions, creating unique timbral interferences.
+  Controls how much of the processed signal is fed back into the chorus loop. Positive feedback reinforces the effect’s resonance and negative feedback introduces phase inversions creating some unique timbral interferences.
 
 - **MixChorus**  
-  Balances the clean (dry) and processed (wet) signals. Low settings keep the chorus in the background; high settings bring the modulated effect to the forefront.
+  Balances the clean (dry) and processed (wet) signals. Low settings keep the chorus in the background while high settings bring the modulated effect to the forefront.
 
 ### b. Reverb
 
 - **Size**  
-  Adjusts the overall decay time (RT60) by simulating different room sizes. Increasing size yields a longer decay tail, as in a large hall; reducing it shortens the tail, typical of smaller rooms.
+  Adjusts the overall decay time (RT60) by simulating different room sizes. Increasing size yields a longer decay tail as in a large hall. Reducing it shortens the tail, typical of smaller rooms.
 
 - **Damp**  
-  Sets the high-frequency damping coefficient in the reverb feedback network. Low damping lets high frequencies persist longer for a bright reverb; higher damping applies stronger low-pass filtering, darkening the tail.
+  Sets the high-frequency damping coefficient in the reverb feedback network. Low damping lets high frequencies persist longer for a bright reverb while higher damping applies stronger low-pass filtering darkening the tail.
 
 - **Freeze (∞)**  
   Activates a buffer freeze: the current reverb buffer content is locked in a unit-gain feedback loop, creating an infinite decay as long as the control remains enabled.
 
 - **Width**  
-  Controls the stereo distribution of the reverb feedback. Narrow width keeps the signal centered; wider width introduces phase shifts between left and right channels, creating a broader stereo image.
+  Controls the stereo distribution of the reverb feedback. Narrow width keeps the signal centered. Instead wider width introduces phase shifts between left and right channels creating a broader stereo image.
 
 - **Mix**  
-  Crossfades between the original (dry) and processed (wet) signals. Moderate settings add depth without overwhelming the original envelope; high values immerse the sound in reflections.
+  Crossfades between the original (dry) and processed (wet) signals. Moderate settings add depth without overwhelming the original envelope. High values immerse the sound in reflections.
 
 ---
 
