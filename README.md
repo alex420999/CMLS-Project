@@ -41,7 +41,7 @@ Il segnale audio, dopo essere stato elaborato da SuperCollider, ritorna nella DA
 Gli effetti principali sviluppati per POLIcalling sono il Chorus e il Riverbero, realizzati interamente con JUCE, che permettono di arricchire il timbro con profondità, movimento e spazialità, ampliando notevolmente le possibilità creative.
 
 <div align="center">
-  <img src="Images/WhatsApp Image 2025-05-22 at 11.51.37.jpeg" alt="Interfaccia JUCE effetti Chorus e Riverbero" />
+  <img src="Images/Music Effects Interface picture.JPG" alt="Interfaccia JUCE effetti Chorus e Riverbero" />
 </div>
 
 ### a. Chorus
