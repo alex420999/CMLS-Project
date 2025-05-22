@@ -1,14 +1,14 @@
 <h1 align="center">POLIcalling</h1>
 
-## Introduzione
+## Introduction
 
-L’obiettivo del progetto POLIcalling è la realizzazione di un sintetizzatore a sintesi additiva con tre oscillatori progettato per lavorare in stretta unione con qualsiasi DAW.
+The goal of the POLIcalling project is to create an additive-synthesis synthesizer with three oscillators designed to work in tight integration with any DAW.
 
-Il risultato ottenuto è uno strumento stand-alone che riceve come input la tastiera MIDI della DAW (nel nostro caso Ableton) e rinvia il segnale processato direttamente a una traccia audio dello stesso programma, garantendo una perfetta integrazione tra le due parti.
+The result is a standalone instrument that receives MIDI input from the DAW keyboard (in our case Ableton) and sends the processed signal directly to an audio track of the same program, ensuring seamless integration between the two components.
 
-Questo sintetizzatore non si limita a offrire un controllo sui parametri essenziali, come l’inviluppo ADSR del volume, ma si avvale anche della tecnologia di JUCE per creare e modulare effetti sonori quali il chorus e il riverbero.
+This synthesizer not only offers control over essential parameters—such as the volume ADSR envelope—but also leverages JUCE technology to create and modulate audio effects like chorus and reverb.
 
-Infine, grazie all’uso del dispositivo Arduino UNO, il progetto offre all’utente un’esperienza dinamica e coinvolgente: sensori e comandi fisici permettono di plasmare il suono in tempo reale, rendendo ogni performance unica e viva.
+Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and engaging user experience: physical sensors and controls allow real-time sound shaping, making every performance unique and alive.
 
 ---
 
@@ -17,28 +17,28 @@ Infine, grazie all’uso del dispositivo Arduino UNO, il progetto offre all’ut
 1. [Synth Module](#synth-module)  
 2. [Music Effects Module](#music-effects-module)  
    a. [Chorus](#a-chorus)  
-   b. [Riverbero](#b-riverbero)  
+   b. [Reverb](#b-reverb)  
 3. [Arduino UNO Module](#arduino-uno-module)  
 
 ---
 
 ## Synth Module
 
-Il sintetizzatore è composto da tre oscillatori indipendenti, ognuno con la possibilità di selezionare tra sette forme d’onda differenti. Ogni oscillatore dispone di uno slider dedicato per regolarne il volume in modo preciso.
+The synthesizer is built around three independent oscillators, each capable of selecting among seven different waveforms. Each oscillator has its own slider for precise volume control.
 
-Per arricchire il suono, ogni oscillatore è dotato di un effetto ensemble che simula la presenza di più oscillatori simili ma leggermente sfalsati, conferendo maggiore spessore e profondità al timbro complessivo.
+To enrich the sound, each oscillator features an ensemble effect that simulates multiple similar but slightly detuned oscillators, adding thickness and depth to the overall timbre.
 
-L’inviluppo del volume di tutti e tre gli oscillatori viene gestito con un’unica ADSR, permettendo di modellare attacco, decadimento, sustain e rilascio in modo semplice e intuitivo. Inoltre, un filtro passa basso (LPF) regolabile tramite uno slider agisce simultaneamente su tutti gli oscillatori, modulandone il carattere tonale complessivo.
+A single ADSR envelope controls the volume of all three oscillators, allowing attack, decay, sustain, and release to be shaped simply and intuitively. In addition, a low-pass filter (LPF) adjustable via a slider acts simultaneously on all oscillators, modulating the overall tonal character.
 
-La sintesi sonora vera e propria è implementata con SuperCollider, che garantisce un controllo dettagliato e una qualità audio elevata. Parallelamente, l’interfaccia grafica che comprende gli slider di controllo e il visualizzatore in tempo reale della forma d’onda è stata sviluppata con Processing, offrendo un’interazione dinamica e un feedback visivo immediato per l’utente.
+The sound synthesis itself is implemented in SuperCollider, providing detailed control and high audio quality. Meanwhile, the graphical interface—including the control sliders and a real-time waveform display—was developed in Processing, offering dynamic interaction and immediate visual feedback.
 
 ---
 
 ## Music Effects Module
 
-Il segnale audio, dopo essere stato elaborato da SuperCollider, ritorna nella DAW dove può essere indirizzato a una traccia audio dedicata. Su questa traccia, gli effetti sonori creati con la potenza e la flessibilità di JUCE vengono applicati in cascata, offrendo una nuova dimensione espressiva al suono.
+After being processed by SuperCollider, the audio signal returns to the DAW where it can be routed to a dedicated audio track. On this track, JUCE-powered audio effects are applied in series, adding a new expressive dimension to the sound.
 
-Gli effetti principali sviluppati per POLIcalling sono il Chorus e il Riverbero, realizzati interamente con JUCE, che permettono di arricchire il timbro con profondità, movimento e spazialità, ampliando notevolmente le possibilità creative.
+The main effects developed for POLIcalling are Chorus and Reverb, implemented entirely with JUCE to enrich the timbre with depth, movement, and spatiality—greatly expanding creative possibilities.
 
 <div align="center">
   <img src="Images/Music Effects Interface picture.JPG" alt="Interfaccia JUCE effetti Chorus e Riverbero" width="70%" />
@@ -47,45 +47,45 @@ Gli effetti principali sviluppati per POLIcalling sono il Chorus e il Riverbero,
 ### a. Chorus
 
 - **Rate**  
-  Definisce la frequenza di oscillazione dell’LFO che modula il tempo di delay. Parametri di rate bassi generano modulazioni lente e ondulatorie; valori elevati producono modulazioni rapide, fino a un effetto vicino al vibrato.
+  Defines the oscillation frequency of the LFO that modulates the delay time. Low rate settings produce slow, undulating modulations; high values yield fast, vibrato-like effects.
 
 - **Depth**  
-  Determina la quantità di deviazione del tempo di delay introdotta dall’LFO. Con depth ridotta l’oscillazione del delay è minima, per un chorus sottile e naturale; aumentando la depth si ottengono escursioni di pitch più ampie e un carattere più “liquido”.
+  Determines how much the LFO deviates the delay time. Low depth yields subtle, natural chorus; higher depth produces wider pitch excursions and a more “liquid” character.
 
 - **CentreDelay**  
-  Imposta il tempo di ritardo di base intorno al quale l’LFO applica la modulazione. Un centreDelay breve crea un chorus più brillante e compatto; un valore maggiore rende l’effetto più corposo, avvicinandosi al doubling modulato.
+  Sets the base delay time around which the LFO applies modulation. Short centreDelay creates a bright, tight chorus; longer values make the effect more pronounced, approaching a modulated doubling.
 
 - **Feedback**  
-  Regola la quantità di segnale processato che viene reimmesso nel feedback del chorus. Feedback positivi rinforzano la risonanza dell’effetto; feedback negativi introducono inversioni di fase, generando interferenze timbriche particolari.
+  Controls how much of the processed signal is fed back into the chorus loop. Positive feedback reinforces the effect’s resonance; negative feedback introduces phase inversions, creating unique timbral interferences.
 
 - **MixChorus**  
-  Bilancia il segnale pulito (dry) con quello processato dal chorus (wet). Valori bassi mantengono il chorus in sottofondo; valori alti portano in primo piano l’effetto modulato.
+  Balances the clean (dry) and processed (wet) signals. Low settings keep the chorus in the background; high settings bring the modulated effect to the forefront.
 
-### b. Riverbero
+### b. Reverb
 
 - **Size**  
-  Regola il tempo di decadimento complessivo (RT60) simulando diverse dimensioni dello spazio. Aumentando la size si ottiene una coda più lunga, come in un ambiente ampio; riducendola si accorcia la coda, tipica di stanze più piccole.
+  Adjusts the overall decay time (RT60) by simulating different room sizes. Increasing size yields a longer decay tail, as in a large hall; reducing it shortens the tail, typical of smaller rooms.
 
 - **Damp**  
-  Imposta il coefficiente di smorzamento delle alte frequenze nel feedback network. Con damping ridotto le alte frequenze permangono più a lungo, generando un riverbero brillante; aumentandolo si applica un filtraggio low-pass più marcato, scurendo il tail.
+  Sets the high-frequency damping coefficient in the reverb feedback network. Low damping lets high frequencies persist longer for a bright reverb; higher damping applies stronger low-pass filtering, darkening the tail.
 
 - **Freeze (∞)**  
-  Attiva il congelamento del buffer di riverbero: il contenuto corrente viene bloccato in un loop a feedback unitario, producendo una coda infinita finché il controllo rimane abilitato.
+  Activates a buffer freeze: the current reverb buffer content is locked in a unit-gain feedback loop, creating an infinite decay as long as the control remains enabled.
 
 - **Width**  
-  Controlla la distribuzione stereo del feedback di riverbero. Riducendo la width il segnale rimane centrato; ampliandola si introduce uno spostamento di fase tra i canali sinistro e destro, creando un’immagine stereo più ampia.
+  Controls the stereo distribution of the reverb feedback. Narrow width keeps the signal centered; wider width introduces phase shifts between left and right channels, creating a broader stereo image.
 
 - **Mix**  
-  Effettua il crossfade tra il segnale originale (dry) e quello processato (wet). Serve a dosare la presenza del riverbero: impostazioni moderate aggiungono profondità senza coprire l’inviluppo originale, valori alti immergono il suono nelle riflessioni.
+  Crossfades between the original (dry) and processed (wet) signals. Moderate settings add depth without overwhelming the original envelope; high values immerse the sound in reflections.
 
 ---
 
 ## Arduino UNO Module
 
-### Hardware e sensori
+### Hardware and Sensors
 
-Descrizione dell’hardware e dei sensori utilizzati.
+Description of the hardware and sensors used.
 
-### Programmazione base e interazione
+### Basic Programming and Interaction
 
-Nozioni base di programmazione Arduino e modalità di interazione con il sintetizzatore.
+Basic Arduino programming concepts and interaction methods with the synthesizer.
