@@ -16,8 +16,8 @@ Infine, grazie all’uso del dispositivo Arduino UNO il progetto offre all’ute
 
 1. [Synth Module](#synth-module)  
 2. [Music Effects Module](#music-effects-module)  
-   a. [Chorus](#chorus)  
-   b. [Riverbero](#riverbero)  
+   a. [Chorus](#a-chorus)  
+   b. [Riverbero](#b-riverbero)  
 3. [Arduino UNO Module](#arduino-uno-module)  
 
 ---
@@ -42,11 +42,37 @@ Gli effetti principali sviluppati per POLIcalling sono il Chorus e il Riverbero,
 
 ### a. Chorus
 
-Il modulo Chorus consente di modulare la ricchezza e la complessità del suono tramite parametri come la profondità, la velocità di modulazione e il mix tra segnale originale e effetto, permettendo di ottenere da lievi variazioni a texture sonore molto corpose.
+- **Rate**  
+  Definisce la frequenza di oscillazione dell’LFO che modula il tempo di delay. Parametri di rate bassi generano modulazioni lente e ondulatorie; valori elevati producono modulazioni rapide, fino a un effetto vicino al vibrato.
+
+- **Depth**  
+  Determina la quantità di deviazione del tempo di delay introdotta dall’LFO. Con depth ridotta l’oscillazione del delay è minima, per un chorus sottile e naturale; aumentando la depth si ottengono escursioni di pitch più ampie e un carattere più “liquido”.
+
+- **CentreDelay**  
+  Imposta il tempo di ritardo di base intorno al quale l’LFO applica la modulazione. Un centreDelay breve crea un chorus più brillante e compatto; un valore maggiore rende l’effetto più corposo, avvicinandosi al doubling modulato.
+
+- **Feedback**  
+  Regola la quantità di segnale processato che viene reimmesso nel feedback del chorus. Feedback positivi rinforzano la risonanza dell’effetto; feedback negativi introducono inversioni di fase, generando interferenze timbriche particolari.
+
+- **MixChorus**  
+  Bilancia il segnale pulito (dry) con quello processato dal chorus (wet). Valori bassi mantengono il chorus in sottofondo; valori alti portano in primo piano l’effetto modulato.
 
 ### b. Riverbero
 
-Il Riverbero offre un controllo preciso su parametri fondamentali quali il tempo di decadimento, la dimensione della stanza simulata e la quantità di segnale riverberato, regalando un senso di spazio naturale o evocativo a seconda delle esigenze artistiche.
+- **Size**  
+  Regola il tempo di decadimento complessivo (RT60) simulando diverse dimensioni dello spazio. Aumentando la size si ottiene una coda più lunga, come in un ambiente ampio; riducendola si accorcia la coda, tipica di stanze più piccole.
+
+- **Damp**  
+  Imposta il coefficiente di smorzamento delle alte frequenze nel feedback network. Con damping ridotto le alte frequenze permangono più a lungo, generando un riverbero brillante; aumentandolo si applica un filtraggio low-pass più marcato, scurendo il tail.
+
+- **Freeze (∞)**  
+  Attiva il congelamento del buffer di riverbero: il contenuto corrente viene bloccato in un loop a feedback unitario, producendo una coda infinita finché il controllo rimane abilitato.
+
+- **Width**  
+  Controlla la distribuzione stereo del feedback di riverbero. Riducendo la width il segnale rimane centrato; ampliandola si introduce uno spostamento di fase tra i canali sinistro e destro, creando un’immagine stereo più ampia.
+
+- **Mix**  
+  Effettua il crossfade tra il segnale originale (dry) e quello processato (wet). Serve a dosare la presenza del riverbero: impostazioni moderate aggiungono profondità senza coprire l’inviluppo originale, valori alti immergono il suono nelle riflessioni.
 
 ---
 
