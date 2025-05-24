@@ -24,13 +24,15 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 
 ## Synth Module
 
-The synthesizer is built around three independent oscillators, each capable of selecting among seven different waveforms. Each oscillator has its own slider for precise volume control.
+## Synth Module
 
-To enrich the sound, each oscillator features an ensemble effect that simulates multiple similar but slightly detuned oscillators, adding thickness and depth to the overall timbre.
+The synthesizer is built around three independent oscillators, each capable of selecting from seven different waveforms. Each oscillator has its own slider for precise volume control.
 
-A single ADSR envelope controls the volume of all three oscillators, allowing attack, decay, sustain, and release to be shaped simply and intuitively. In addition, a low-pass filter (LPF) adjustable via a slider acts simultaneously on all oscillators, modulating the overall tonal character.
+To enrich the sound, each oscillator features an ensemble effect that simulates multiple similar but slightly out-of-tune oscillators, adding texture and depth to the overall sound.
 
-The sound synthesis itself is implemented in SuperCollider, providing detailed control and high audio quality. Meanwhile, the graphical interface—including the control sliders and a real-time waveform display—was developed in Processing, offering dynamic interaction and immediate visual feedback.
+A single ADSR envelope controls the volume of all three oscillators, allowing you to shape the attack, decay, sustain, and release in a simple and intuitive way. Additionally, there is a Low Pass Filter (LPF), Resonant High-Pass Filter (RHPF), High-Pass Filter (HPF), and Resonant Low-Pass Filter (RLPF) that can be adjusted via a slider. Each of the 4 filters acts on all oscillators simultaneously, shaping the overall tonal character and enriching the synth sound.
+
+The sound synthesis itself is implemented in SuperCollider, offering detailed control and high audio quality. Meanwhile, the graphical interface, including control sliders and real-time waveform display, has been developed in Processing, offering dynamic interaction and immediate visual feedback.
 
 ---
 
