@@ -16,13 +16,11 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 
 1. [Synth Module](#synth-module)  
 2. [Music Effects Module](#music-effects-module)  
-   a. [Chorus](#a-chorus)  
-   b. [Reverb](#b-reverb)  
+   a. [Reverb](#a-reverb)  
+   b. [Chorus](#b-chorus)  
 3. [Arduino UNO Module](#arduino-uno-module)  
 
 ---
-
-## Synth Module
 
 ## Synth Module
 
@@ -30,9 +28,9 @@ The synthesizer is built around three independent oscillators, each capable of s
 
 To enrich the sound, each oscillator features an ensemble effect that simulates multiple similar but slightly out-of-tune oscillators, adding texture and depth to the overall sound.
 
-A single ADSR envelope controls the volume of all three oscillators, allowing you to shape the attack, decay, sustain, and release in a simple and intuitive way. Additionally, there is a Low Pass Filter (LPF), Resonant High-Pass Filter (RHPF), High-Pass Filter (HPF), and Resonant Low-Pass Filter (RLPF) that can be adjusted via a slider. Each of the 4 filters acts on all oscillators simultaneously, shaping the overall tonal character and enriching the synth sound.
+A single ADSR envelope controls the volume of all three oscillators, allowing you to shape the attack, decay, sustain, and release in a simple and intuitive way. Additionally, there is a Low Pass Filter (LPF), Resonant High-Pass Filter (RHPF), High-Pass Filter (HPF), and Resonant Low-Pass Filter (RLPF) that can be adjusted via a slider. Each of the four filters acts on all oscillators simultaneously, shaping the overall tonal character and enriching the synth sound.
 
-The sound synthesis itself is implemented in SuperCollider, offering detailed control and high audio quality. Meanwhile, the graphical interface, including control sliders and real-time waveform display, has been developed in Processing, offering dynamic interaction and immediate visual feedback.
+The sound synthesis itself is implemented in SuperCollider, offering detailed control and high audio quality. Meanwhile, the graphical interface, including control sliders and a real-time waveform display, has been developed in Processing, offering dynamic interaction and immediate visual feedback.
 
 ---
 
@@ -40,30 +38,13 @@ The sound synthesis itself is implemented in SuperCollider, offering detailed co
 
 After being processed by SuperCollider, the audio signal returns to the DAW where it can be routed to a dedicated audio track. On this track, JUCE-powered audio effects are applied in series, adding a new expressive dimension to the sound.
 
-The main effects developed for POLIcalling are Chorus and Reverb, implemented entirely with JUCE to enrich the timbre with depth, movement, and spatiality—greatly expanding creative possibilities.
+The main effects developed for POLIcalling are Reverb and Chorus, implemented entirely with JUCE to enrich the timbre with depth, movement, and spatiality—greatly expanding creative possibilities.
 
 <div align="center">
   <img src="Images/Music Effects Interface picture.JPG" alt="JUCE interface for Chorus and Reverb effects" width="70%" />
 </div>
 
-### a. Chorus
-
-- **Rate**  
-  Defines the oscillation frequency of the LFO that modulates the delay time. Low rate settings produce slow, undulating modulations; high values yield fast, vibrato-like effects.
-
-- **Depth**  
-  Determines how much the LFO deviates the delay time. Low depth yields subtle, natural chorus; higher depth produces wider pitch excursions and a more “liquid” character.
-
-- **CentreDelay**  
-  Sets the base delay time around which the LFO applies modulation. Short centreDelay creates a bright, tight chorus; longer values make the effect more pronounced, approaching a modulated doubling.
-
-- **Feedback**  
-  Controls how much of the processed signal is fed back into the chorus loop. Positive feedback reinforces the effect’s resonance; negative feedback introduces phase inversions, creating unique timbral interferences.
-
-- **MixChorus**  
-  Balances the clean (dry) and processed (wet) signals. Low settings keep the chorus in the background; high settings bring the modulated effect to the forefront.
-
-### b. Reverb
+### a. Reverb
 
 - **Size**  
   Adjusts the overall decay time (RT60) by simulating different room sizes. Increasing size yields a longer decay tail, as in a large hall; reducing it shortens the tail, typical of smaller rooms.
@@ -79,6 +60,23 @@ The main effects developed for POLIcalling are Chorus and Reverb, implemented en
 
 - **Mix**  
   Crossfades between the original (dry) and processed (wet) signals. Moderate settings add depth without overwhelming the original envelope; high values immerse the sound in reflections.
+
+### b. Chorus
+
+- **Rate**  
+  Defines the oscillation frequency of the LFO that modulates the delay time. Low rate settings produce slow, undulating modulations; high values yield fast, vibrato-like effects.
+
+- **Depth**  
+  Determines how much the LFO deviates the delay time. Low depth yields subtle, natural chorus; higher depth produces wider pitch excursions and a more “liquid” character.
+
+- **CentreDelay**  
+  Defines the LFO’s central delay time: shorter values yield a tight, bright chorus; longer values produce a more pronounced, doubling-like effect.
+
+- **Feedback**  
+  Controls how much of the processed signal is fed back into the chorus loop. Positive feedback reinforces the effect’s resonance; negative feedback introduces phase inversions, creating unique timbral interferences.
+
+- **MixChorus**  
+  Balances the clean (dry) and processed (wet) signals. Low settings keep the chorus in the background; high settings bring the modulated effect to the forefront.
 
 ---
 
