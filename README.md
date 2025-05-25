@@ -61,6 +61,10 @@ Cutoff frequency is adjusted via a slider (0.0–1.0, mapped log-scale 20 Hz–2
   <img src="images/images/Synth.jpeg" width="70%" alt="Description 1" />
 </p>
 
+<p align="center">
+  <img src="images/images/GUI.jpg" width="70%" alt="Description 1" />
+</p>
+
 
 
 ---
