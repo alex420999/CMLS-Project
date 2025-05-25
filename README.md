@@ -134,4 +134,32 @@ The interface is modular and responsive, composed of:
 #### 🖼️ Layout Features:
 - Sliders grouped and aligned for **Reverb** and **Chorus** effects
 - Use of `explicitFocusOrder` for keyboard accessibility
-- Visual feedback thro
+- Visual feedback through color themes (`MyColours`) and custom styling
+
+---
+
+### c. 📚 Main Libraries & Modules Used
+
+| JUCE Module                      | Purpose                                  |
+|----------------------------------|------------------------------------------|
+| `juce_audio_processors`          | Plugin framework & parameter management  |
+| `juce_dsp`                       | Audio effect algorithms (Reverb/Chorus)  |
+| `juce_gui_basics/extra`          | GUI components, sliders, buttons         |
+| `juce_core`, `data_structures`   | Utilities and internal data binding      |
+
+---
+
+## Interaction Module
+
+### Sensor Interaction Logic
+
+In this project we wanted to turn two simple sensors into a controller for a fun and interactive performance. It works like this:
+
+- **Touch → Trigger**  
+  When your finger touches the capacitive touch, it doesn't just register a click, it activates the waiting light sensor.
+
+- **On-demand light sampling**  
+  The ambient light sensor instantly records the current readings of R, G, B and Clear (brightness).
+
+- **Real-time timbre modulation**  
+  These four numbers (R, G, B, C) are then transmitted by Arduino to the Processing application that processes them and uses them to change the synthesizer parameters on SuperCollider. The R, G and B values respectively change the waveform choice on oscillators 1, 2 and 3. The brightness C value instead adjusts the parameter dedicated to the filter. Finally, the touch sensor is used to change the ADSR “attack” value based on the time interval between one touch and the next on the sensor pad.
