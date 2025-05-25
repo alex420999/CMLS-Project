@@ -21,7 +21,7 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
       - [Chorus Effect](#chorus-effect)  
    b. [Graphical User Interface (GUI)](#graphical-user-interface-gui)  
    c. [Main Libraries & Modules Used](#main-libraries--modules-used)  
-3. [Arduino UNO Module](#arduino-uno-module)
+3. [Interaction Module](#interaction-module)
 
 ---
 
@@ -86,7 +86,6 @@ The interface is modular and responsive, composed of:
 </p>
 
 #### 🖼️ Layout Features:
-
 - Sliders grouped and aligned for **Reverb** and **Chorus** effects
 - Use of `explicitFocusOrder` for keyboard accessibility
 - Visual feedback through color themes (`MyColours`) and custom styling
@@ -104,7 +103,7 @@ The interface is modular and responsive, composed of:
 
 ---
 
-## Arduino UNO Module
+## Interaction Module
 
 ### Sensor Interaction Logic
 
