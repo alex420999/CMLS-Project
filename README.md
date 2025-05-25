@@ -1,4 +1,4 @@
-[<h1 align="center">POLICalling</h1>
+<h1 align="center">POLICalling</h1>
 
 ## Introduction
 
@@ -158,5 +158,4 @@ When your finger touches the capacitive sensor, it activates the light sensor in
 The ambient light sensor instantly records the current readings of R, G, B, and Clear (brightness).
 
 ### c. 🎚️ Real-time Timbre Modulation  
-These four values (R, G, B, C) are sent from Arduino to the Processing application, which maps R/G/B to oscillator waveform choices and C (brightness) to the filter cutoff. Touch sensor timing adjusts the ADSR attack parameter.  
-](https://github.com/alex420999/CMLS-Project)
+These four values (R, G, B, C) are sent from Arduino to the Processing application, which maps R/G/B to oscillator waveform choices and C (brightness) to the filter cutoff. Touch sensor timing adjusts the ADSR attack parameter.
