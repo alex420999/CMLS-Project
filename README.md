@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The goal of the POLIcalling project is to create an additive-synthesis synthesizer with three oscillators designed to work in tight integration with any DAW.
+The goal of the POLICalling project is to create an additive-synthesis synthesizer with three oscillators designed to work in tight integration with any DAW.
 
 The result is a standalone instrument that receives MIDI input from the DAW keyboard (in our case Ableton) and sends the processed signal directly to an audio track of the same program, ensuring seamless integration between the two components.
 
