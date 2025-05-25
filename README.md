@@ -15,6 +15,9 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 ## Index
 
 1. [Synth Module](#synth-module)  
+   a. [Synthesizer Interface](#synthesizer-interface)  
+   b. [MIDI & OSC Control](#midi--osc-control)  
+   c. [Key SuperCollider Components](#key-supercollider-components)  
 2. [Audio Plugin Module](#audio-plugin-module)  
    a. [Audio Effects](#audio-effects)  
       - [Reverb Effect](#reverb-effect)  
@@ -27,13 +30,56 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 
 ## Synth Module
 
-The synthesizer is built around three independent oscillators, each capable of selecting from seven different waveforms. Each oscillator has its own slider for precise volume control.
+### a. Synthesizer Interface
 
-To enrich the sound, each oscillator features an ensemble effect that simulates multiple similar but slightly out-of-tune oscillators, adding texture and depth to the overall sound.
+#### Oscillators & Ensemble
+Each voice consists of three slightly detuned copies of the selected waveform, creating a richer texture when the ensemble feature is enabled.  
+🧩 **Parameters**  
+- **wave1, wave2, wave3**: Waveform selection (integer 0–6; sine, parabolic, triangle, blip, formant, saw, pulse)  
+- **ens1, ens2, ens3**: Optional ensemble depth (0.10–1.0; set to 0 to disable)  
+- **vol1, vol2, vol3**: Level of each oscillator (0.0–1.0; user-controlled via sliders)
 
-A single ADSR envelope controls the volume of all three oscillators, allowing you to shape the attack, decay, sustain, and release in a simple and intuitive way. Additionally, there is a Low Pass Filter (LPF), Resonant High-Pass Filter (RHPF), High-Pass Filter (HPF), and Resonant Low-Pass Filter (RLPF) that can be adjusted via a slider. Each of the four filters acts on all oscillators simultaneously, shaping the overall tonal character and enriching the synth sound.
+#### ADSR Envelope
+A single ADSR envelope controls the volume of all three oscillators, allowing you to shape the attack, decay, sustain, and release in a simple and intuitive way.  
+🧩 **Parameters**  
+- **att**: Attack time (0.001–2 s)  
+- **dec**: Decay time (0.001–2 s)  
+- **sust**: Sustain level (0.0–1.0)  
+- **rel**: Release time (0.001–3 s)
 
-The sound synthesis itself is implemented in SuperCollider, offering detailed control and high audio quality. Meanwhile, the graphical interface, including control sliders and real-time waveform display, has been developed in Processing, offering dynamic interaction and immediate visual feedback.
+#### Filter
+Audio is routed through **one** of four selectable filters—only the active filter processes the signal. Each acts on all oscillators simultaneously, shaping the overall tonal character.  
+🧩 **Filter Types**  
+- **Resonant Low-Pass (RLPF)** (lets lows pass, boosts around cutoff)  
+- **Low-Pass (LPF)** (smoothly cuts highs)  
+- **Resonant High-Pass (RHPF)** (lets highs pass, boosts around cutoff)  
+- **High-Pass (HPF)** (smoothly cuts lows)  
+
+Cutoff frequency is adjusted via a slider (0.0–1.0, mapped log-scale 20 Hz–20 kHz).
+
+---
+
+### b. MIDI & OSC Control
+- **MIDI**:  
+  - `noteOn` → instantiate synth with note frequency & velocity  
+  - `noteOff` → release envelope  
+- **OSC**:  
+  - `/wave [i1, i2, i3]` → set `wave1–3`  
+  - `/volumes [f1, f2, f3]` → set `vol1–3`  
+  - `/ensemble [f1, f2, f3]` → set `ens1–3`  
+  - `/env [att, dec, sust, rel]` → set ADSR parameters  
+  - `/filter/type [0–3]` → select filter (0=RLPF, 1=LPF, 2=RHPF, 3=HPF)  
+  - `/filter/freq [0.0–1.0]` → set cutoff frequency  
+
+---
+
+### c. Key SuperCollider Components
+- **SynthDef / Synth**: defines and spawns the synth voices  
+- **EnvGen.kr**: ADSR envelope generator  
+- **Select.ar** + **Splay.ar**: waveform selection and detuned voice generation  
+- **RLPF.ar, LPF.ar, RHPF.ar, HPF.ar**: selectable filter processing  
+- **MIDIdef**: MIDI event handling  
+- **OSCdef**: OSC parameter updates  
 
 ---
 
