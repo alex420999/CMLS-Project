@@ -81,6 +81,8 @@ The interface is modular and responsive, composed of:
 - `PluginEditor` – main container with scaling and keyboard handling
 - `EditorContent` – inner component managing all effect controls
 
+<img src="Images/Music Effects Interface picture.JPG" width="70%" />
+
 #### 🖼️ Layout Features:
 
 - Sliders grouped and aligned for **Reverb** and **Chorus** effects
