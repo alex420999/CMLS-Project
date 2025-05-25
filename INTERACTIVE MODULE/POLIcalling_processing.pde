@@ -124,7 +124,6 @@ int parseValue(String s, String key) {
   if (idx == -1) return -1;
   int start = idx + key.length() + 1;
 
-  // 跳过冒号后可能的空格
   while (start < s.length() && s.charAt(start) == ' ') {
     start++;
   }
