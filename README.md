@@ -64,7 +64,7 @@ RLPF, LPF, RHPF, HPF (cascade!)
 ### b. Host DAW Integration
 
 <p align="center">
-  <img src="images/Ableton.jpg" width="70%" alt="Description 1" />
+  <img src="images/Ableton.jpg" width="45%" alt="Description 1" />
 </p>
 
 - MIDI from controller to SuperCollider  
