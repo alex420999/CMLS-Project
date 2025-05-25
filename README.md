@@ -15,10 +15,13 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 ## Index
 
 1. [Synth Module](#synth-module)  
-2. [Music Effects Module](#music-effects-module)  
-   a. [Reverb](#a-reverb)  
-   b. [Chorus](#b-chorus)  
-3. [Arduino UNO Module](#arduino-uno-module)  
+2. [PoliCalling Audio Plugin](#policalling-audio-plugin)  
+   a. [Audio Effects](#audio-effects)  
+      - [Reverb Effect](#reverb-effect)  
+      - [Chorus Effect](#chorus-effect)  
+   b. [Graphical User Interface (GUI)](#graphical-user-interface-gui)  
+   c. [Main Libraries & Modules Used](#main-libraries--modules-used)  
+3. [Arduino UNO Module](#arduino-uno-module)
 
 ---
 
@@ -34,49 +37,66 @@ The sound synthesis itself is implemented in SuperCollider, offering detailed co
 
 ---
 
-## Music Effects Module
+## PoliCalling Audio Plugin
 
-After being processed by SuperCollider, the audio signal returns to the DAW where it can be routed to a dedicated audio track. On this track, JUCE-powered audio effects are applied in series, adding a new expressive dimension to the sound.
+### 🔧 Overview
 
-The main effects developed for POLIcalling are Reverb and Chorus, implemented entirely with JUCE to enrich the timbre with depth, movement, and spatiality—greatly expanding creative possibilities.
+**PoliCalling** is a cross-platform audio plugin built using the JUCE framework. It integrates two high-quality audio effects—**Reverb** and **Chorus**—with a carefully designed user interface that enables intuitive real-time control. The plugin supports VST3, AU, and standalone formats.
 
-<div align="center">
-  <img src="Images/Music Effects Interface picture.JPG" alt="JUCE interface for Chorus and Reverb effects" width="70%" />
-</div>
+---
 
-### a. Reverb
+### a. 🎛️ Audio Effects
 
-- **Size**  
-  Adjusts the overall decay time (RT60) by simulating different room sizes. Increasing size yields a longer decay tail, as in a large hall; reducing it shortens the tail, typical of smaller rooms.
+#### 1. **Reverb Effect**
+Adds spatial depth and ambience to the sound by simulating natural room reflections.
 
-- **Damp**  
-  Sets the high-frequency damping coefficient in the reverb feedback network. Low damping lets high frequencies persist longer for a bright reverb; higher damping applies stronger low-pass filtering, darkening the tail.
+##### 🧩 Parameters:
+- **Size (`size`)**: Controls the virtual room size (0%–100%)
+- **Damping (`damp`)**: Controls high-frequency absorption (0%–100%)
+- **Width (`width`)**: Adjusts stereo spread (0%–100%)
+- **Mix (`mix`)**: Sets the wet/dry signal ratio (0%–100%)
+- **Freeze (`freeze`)**: Freezes the reverb tail for ambient/sustain effects (boolean)
 
-- **Freeze (∞)**  
-  Activates a buffer freeze: the current reverb buffer content is locked in a unit-gain feedback loop, creating an infinite decay as long as the control remains enabled.
+#### 2. **Chorus Effect**
+Modulates a delayed copy of the signal to create a rich, multi-voice texture.
 
-- **Width**  
-  Controls the stereo distribution of the reverb feedback. Narrow width keeps the signal centered; wider width introduces phase shifts between left and right channels, creating a broader stereo image.
+##### 🧩 Parameters:
+- **Rate (`rate`)**: Modulation speed of the LFO (Hz)
+- **Depth (`depth`)**: Modulation intensity (0%–100%)
+- **Centre Delay (`centreDelay`)**: Base delay around which modulation occurs (ms)
+- **Feedback (`feedback`)**: Feeds part of the output back into the input (0%–100%)
+- **Mix (`mixChorus`)**: Wet/dry balance (0%–100%)
 
-- **Mix**  
-  Crossfades between the original (dry) and processed (wet) signals. Moderate settings add depth without overwhelming the original envelope; high values immerse the sound in reflections.
+##### 🛠️ Key JUCE Functions:
+- `juce::Reverb`, `juce::dsp::Chorus` class for core effect
+- `AudioProcessorValueTreeState` for parameter-value linking
+- `SliderAttachment` and `ButtonAttachment` for GUI binding
 
-### b. Chorus
+---
 
-- **Rate**  
-  Defines the oscillation frequency of the LFO that modulates the delay time. Low rate settings produce slow, undulating modulations; high values yield fast, vibrato-like effects.
+### b. 🖥️ Graphical User Interface (GUI)
 
-- **Depth**  
-  Determines how much the LFO deviates the delay time. Low depth yields subtle, natural chorus; higher depth produces wider pitch excursions and a more “liquid” character.
+The interface is modular and responsive, composed of:
 
-- **CentreDelay**  
-  Defines the LFO’s central delay time: shorter values yield a tight, bright chorus; longer values produce a more pronounced, doubling-like effect.
+- `PluginEditor` – main container with scaling and keyboard handling
+- `EditorContent` – inner component managing all effect controls
 
-- **Feedback**  
-  Controls how much of the processed signal is fed back into the chorus loop. Positive feedback reinforces the effect’s resonance; negative feedback introduces phase inversions, creating unique timbral interferences.
+#### 🖼️ Layout Features:
 
-- **MixChorus**  
-  Balances the clean (dry) and processed (wet) signals. Low settings keep the chorus in the background; high settings bring the modulated effect to the forefront.
+- Sliders grouped and aligned for **Reverb** and **Chorus** effects
+- Use of `explicitFocusOrder` for keyboard accessibility
+- Visual feedback through color themes (`MyColours`) and custom styling
+
+---
+
+### c. 📚 Main Libraries & Modules Used
+
+| JUCE Module                      | Purpose                                  |
+|----------------------------------|------------------------------------------|
+| `juce_audio_processors`          | Plugin framework & parameter management  |
+| `juce_dsp`                       | Audio effect algorithms (Reverb/Chorus)  |
+| `juce_gui_basics/extra`          | GUI components, sliders, buttons         |
+| `juce_core`, `data_structures`   | Utilities and internal data binding      |
 
 ---
 
@@ -93,4 +113,5 @@ In this project we wanted to turn two simple sensors into a controller for a fun
   The ambient light sensor instantly records the current readings of R, G, B and Clear (brightness).
 
 - **Real-time timbre modulation**  
-  These four numbers (R, G, B, C) are then transmitted by Arduino to the Processing application that processes them and uses them to change the synthesizer parameters on SuperCollider. The R, G and B value respectively change the waveform choice on oscillators 1, 2 and 3. The brightness C value instead adjusts the parameter dedicated to the filter. Finally the touch sensor is used to change the ADSR "attack" value based on the time interval between one touch and the next on the sensor pad.  
+  These four numbers (R, G, B, C) are then transmitted by Arduino to the Processing application that processes them and uses them to change the synthesizer parameters on SuperCollider. The R, G and B values respectively change the waveform choice on oscillators 1, 2 and 3. The brightness C value instead adjusts the parameter dedicated to the filter. Finally, the touch sensor is used to change the ADSR “attack” value based on the time interval between one touch and the next on the sensor pad.
+```
