@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="H25SVN" name="PoliCalling" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
+              cppLanguageStandard="20" pluginFormats="buildStandalone,buildVST,buildVST3">
+  <MAINGROUP id="QHbUO0" name="PoliCalling">
+    <GROUP id="{C5B95008-985A-968A-599C-BAC18C55635E}" name="res">
+      <FILE id="G4Agra" name="FreezeIcon.svg" compile="0" resource="1" file="res/FreezeIcon.svg"/>
+      <FILE id="QWyyb0" name="UbuntuRegular.ttf" compile="0" resource="1"
+            file="res/UbuntuRegular.ttf"/>
+    </GROUP>
+    <GROUP id="{C9881E5F-AE47-3D70-FAE1-E17640574CA1}" name="Source">
+      <FILE id="D1WZAy" name="logo.png" compile="0" resource="1" file="Source/logo.png"/>
+      <FILE id="oJq977" name="background.png" compile="0" resource="1" file="Source/background.png"/>
+      <FILE id="zbnX9x" name="knob.png" compile="0" resource="1" file="Source/knob.png"/>
+      <GROUP id="{055EDE1B-DFC5-5073-A5EB-B1E455E7A2AA}" name="ui">
+        <FILE id="hjSbdD" name="Dial.cpp" compile="1" resource="0" file="Source/ui/Dial.cpp"/>
+        <FILE id="ovZkwi" name="Dial.h" compile="0" resource="0" file="Source/ui/Dial.h"/>
+        <FILE id="h7MVJd" name="EditorContent.cpp" compile="1" resource="0"
+              file="Source/ui/EditorContent.cpp"/>
+        <FILE id="MPaGgq" name="EditorContent.h" compile="0" resource="0" file="Source/ui/EditorContent.h"/>
+        <FILE id="sm402E" name="EditorLnf.cpp" compile="1" resource="0" file="Source/ui/EditorLnf.cpp"/>
+        <FILE id="mTgQ7E" name="EditorLnf.h" compile="0" resource="0" file="Source/ui/EditorLnf.h"/>
+        <FILE id="aciO3C" name="FreezeButton.cpp" compile="1" resource="0"
+              file="Source/ui/FreezeButton.cpp"/>
+        <FILE id="yLqndR" name="FreezeButton.h" compile="0" resource="0" file="Source/ui/FreezeButton.h"/>
+        <FILE id="xusNSC" name="MyColours.h" compile="0" resource="0" file="Source/ui/MyColours.h"/>
+      </GROUP>
+      <FILE id="DMoWAG" name="ParamIDs.h" compile="0" resource="0" file="Source/ParamIDs.h"/>
+      <FILE id="aGupYu" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="AWvtAf" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="hBXCn9" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="n1VuLX" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PoliCalling"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="PoliCalling"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+    <VS2022 targetFolder="Builds/VisualStudio2022_1">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_core" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_dsp" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\Users\rlath\OneDrive\&#48148;&#53461; &#54868;&#47732;\computer music\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
