@@ -15,7 +15,7 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 ## Index
 
 1. [Synth Module](#synth-module)  
-2. [PoliCalling Audio Plugin](#policalling-audio-plugin)  
+2. [Audio Plugin Module](#audio-plugin-module)  
    a. [Audio Effects](#audio-effects)  
       - [Reverb Effect](#reverb-effect)  
       - [Chorus Effect](#chorus-effect)  
@@ -33,21 +33,21 @@ To enrich the sound, each oscillator features an ensemble effect that simulates 
 
 A single ADSR envelope controls the volume of all three oscillators, allowing you to shape the attack, decay, sustain, and release in a simple and intuitive way. Additionally, there is a Low Pass Filter (LPF), Resonant High-Pass Filter (RHPF), High-Pass Filter (HPF), and Resonant Low-Pass Filter (RLPF) that can be adjusted via a slider. Each of the four filters acts on all oscillators simultaneously, shaping the overall tonal character and enriching the synth sound.
 
-The sound synthesis itself is implemented in SuperCollider, offering detailed control and high audio quality. Meanwhile, the graphical interface, including control sliders and a real-time waveform display, has been developed in Processing, offering dynamic interaction and immediate visual feedback.
+The sound synthesis itself is implemented in SuperCollider, offering detailed control and high audio quality. Meanwhile, the graphical interface, including control sliders and real-time waveform display, has been developed in Processing, offering dynamic interaction and immediate visual feedback.
 
 ---
 
-## PoliCalling Audio Plugin
+## Audio Plugin Module
 
 ### 🔧 Overview
 
-**PoliCalling** is a cross-platform audio plugin built using the JUCE framework. It integrates two high-quality audio effects—**Reverb** and **Chorus**—with a carefully designed user interface that enables intuitive real-time control. The plugin supports VST3, AU, and standalone formats.
+**Audio Plugin Module** is a cross-platform audio plugin built using the JUCE framework. It integrates two high-quality audio effects—**Reverb** and **Chorus**—with a carefully designed user interface that enables intuitive real-time control. The plugin supports VST3, AU, and standalone formats.
 
 ---
 
 ### a. 🎛️ Audio Effects
 
-#### 1. **Reverb Effect**
+#### 1. **Reverb Effect**  
 Adds spatial depth and ambience to the sound by simulating natural room reflections.
 
 ##### 🧩 Parameters:
@@ -57,7 +57,7 @@ Adds spatial depth and ambience to the sound by simulating natural room reflecti
 - **Mix (`mix`)**: Sets the wet/dry signal ratio (0%–100%)
 - **Freeze (`freeze`)**: Freezes the reverb tail for ambient/sustain effects (boolean)
 
-#### 2. **Chorus Effect**
+#### 2. **Chorus Effect**  
 Modulates a delayed copy of the signal to create a rich, multi-voice texture.
 
 ##### 🧩 Parameters:
@@ -114,4 +114,3 @@ In this project we wanted to turn two simple sensors into a controller for a fun
 
 - **Real-time timbre modulation**  
   These four numbers (R, G, B, C) are then transmitted by Arduino to the Processing application that processes them and uses them to change the synthesizer parameters on SuperCollider. The R, G and B values respectively change the waveform choice on oscillators 1, 2 and 3. The brightness C value instead adjusts the parameter dedicated to the filter. Finally, the touch sensor is used to change the ADSR “attack” value based on the time interval between one touch and the next on the sensor pad.
-```
