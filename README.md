@@ -151,15 +151,11 @@ The interface is modular and responsive, composed of:
 
 ## Interaction Module
 
-### Sensor Interaction Logic
+### a. ⚡ Touch → Trigger  
+When your finger touches the capacitive sensor, it activates the light sensor instead of just registering a click.
 
-In this project we wanted to turn two simple sensors into a controller for a fun and interactive performance. It works like this:
+### b. 💡 On-demand Light Sampling  
+The ambient light sensor instantly records the current readings of R, G, B, and Clear (brightness).
 
-- **Touch → Trigger**  
-  When your finger touches the capacitive touch, it doesn't just register a click, it activates the waiting light sensor.
-
-- **On-demand light sampling**  
-  The ambient light sensor instantly records the current readings of R, G, B and Clear (brightness).
-
-- **Real-time timbre modulation**  
-  These four numbers (R, G, B, C) are then transmitted by Arduino to the Processing application that processes them and uses them to change the synthesizer parameters on SuperCollider. The R, G and B values respectively change the waveform choice on oscillators 1, 2 and 3. The brightness C value instead adjusts the parameter dedicated to the filter. Finally, the touch sensor is used to change the ADSR “attack” value based on the time interval between one touch and the next on the sensor pad.
+### c. 🎚️ Real-time Timbre Modulation  
+These four values (R, G, B, C) are sent from Arduino to the Processing application, which maps R/G/B to oscillator waveform choices and C (brightness) to the filter cutoff. Touch sensor timing adjusts the ADSR attack parameter.  
