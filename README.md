@@ -33,7 +33,7 @@ Finally, thanks to the use of an Arduino UNO, the project delivers a dynamic and
 ### a. 🖥️ Graphical User Interface (GUI)
 
 #### 🎹 Oscillators & Ensemble
-Each voice consists of three slightly detuned copies of the selected waveform, creating a richer texture when the ensemble feature is enabled.  
+Each voice consists of three slightly detuned copies of the selected waveform, creating a richer texture when the ensemble feature is enabled. A real-time waveform display shows the output of each individual oscillator.  
 🧩 **Parameters**  
 - **wave1, wave2, wave3**: Waveform selection (integer 0–6; sine, parabolic, triangle, blip, formant, saw, pulse)  
 - **ens1, ens2, ens3**: Optional ensemble depth (0.10–1.0; set to 0 to disable)  
@@ -48,7 +48,7 @@ A single ADSR envelope controls the volume of all three oscillators, allowing yo
 - **rel**: Release time (0.001–3 s)
 
 #### 🔊 Filter
-Audio is routed through **one** of four selectable filters—only the active filter processes the signal. Each acts on all oscillators simultaneously, shaping the overall tonal character.  
+Audio is routed through **one** of four selectable filters—only the active filter processes the signal. Each acts on all oscillators simultaneously, shaping the overall tonal character. A combined waveform viewer displays the mixed output and changes its color dynamically based on the R, G, B values from the light sensor.  
 🧩 **Filter Types**  
 - **Resonant Low-Pass (RLPF)** (lets lows pass, boosts around cutoff)  
 - **Low-Pass (LPF)** (smoothly cuts highs)  
