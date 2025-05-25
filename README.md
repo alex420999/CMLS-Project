@@ -24,7 +24,7 @@ OSC and MIDI channels bridge the analog and digital parts, while BlackHole and I
 ### a. 🖥️ Graphical User Interface (GUI)
 
 <p align="center">
-  <img src="images/GUI.jpeg" width="70%" alt="Description 1" />
+  <img src="images/GUI.jpg" width="70%" alt="Description 1" />
 </p>
 
 Each oscillator features waveform selection, volume, and ensemble detune.  
@@ -54,7 +54,7 @@ RLPF, LPF, RHPF, HPF (cascade!)
 ### a. Interface and Effects
 
 <p align="center">
-  <img src="images/Plugin.jpeg" width="70%" alt="Description 1" />
+  <img src="images/Plugin.jpg" width="70%" alt="Description 1" />
 </p>
 
 - **Reverb**: size, damp, width, mix, freeze  
@@ -64,7 +64,7 @@ RLPF, LPF, RHPF, HPF (cascade!)
 ### b. Host DAW Integration
 
 <p align="center">
-  <img src="images/Ableton.jpeg" width="70%" alt="Description 1" />
+  <img src="images/Ableton.jpg" width="70%" alt="Description 1" />
 </p>
 
 - MIDI from controller to SuperCollider  
