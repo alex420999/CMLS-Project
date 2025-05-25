@@ -9,7 +9,10 @@ The POLICalling project is an advanced synthesizer system designed for real-time
 
 ## 🧰 System Architecture
 
-![System Diagram](/mnt/data/POLIcallingSystem.jpeg)
+
+<p align="center">
+  <img src="images/POLIcallingSystem.jpeg" width="70%" alt="Description 1" />
+</p>
 
 A complete data flow: Arduino → Processing → SuperCollider → DAW + JUCE Plugin.  
 OSC and MIDI channels bridge the analog and digital parts, while BlackHole and IAC provide routing.
@@ -20,7 +23,9 @@ OSC and MIDI channels bridge the analog and digital parts, while BlackHole and I
 
 ### a. 🖥️ Graphical User Interface (GUI)
 
-![Synth GUI](/mnt/data/GUI.jpg)
+<p align="center">
+  <img src="images/GUI.jpeg" width="70%" alt="Description 1" />
+</p>
 
 Each oscillator features waveform selection, volume, and ensemble detune.  
 The combined waveform viewer is colored dynamically via the sensor.
@@ -48,7 +53,9 @@ RLPF, LPF, RHPF, HPF (cascade!)
 
 ### a. Interface and Effects
 
-![Plugin Effects](/mnt/data/Plugin.jpg)
+<p align="center">
+  <img src="images/Plugin.jpeg" width="70%" alt="Description 1" />
+</p>
 
 - **Reverb**: size, damp, width, mix, freeze  
 - **Chorus**: rate, depth, centreDelay, feedback, mix  
@@ -56,7 +63,9 @@ RLPF, LPF, RHPF, HPF (cascade!)
 
 ### b. Host DAW Integration
 
-![Ableton Setup](/mnt/data/Ableton.jpg)
+<p align="center">
+  <img src="images/Ableton.jpeg" width="70%" alt="Description 1" />
+</p>
 
 - MIDI from controller to SuperCollider  
 - Audio from SuperCollider to Ableton audio track  
@@ -68,7 +77,9 @@ RLPF, LPF, RHPF, HPF (cascade!)
 
 ### Processing + Arduino + OSC
 
-![Additive Synthesis Diagram](/mnt/data/Synth.jpeg)
+<p align="center">
+  <img src="images/Synth.jpeg" width="70%" alt="Description 1" />
+</p>
 
 Waveform, ADSR and Ensemble are adjusted based on sensor input.  
 Arduino detects touch and ambient light.  
