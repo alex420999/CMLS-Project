@@ -58,7 +58,7 @@ Audio is routed through **one** of four selectable filters—only the active fil
 Cutoff frequency is adjusted via a slider (0.0–1.0, mapped log-scale 20 Hz–20 kHz).
 
 <p align="center">
-  <img src="images\Synth.jpeg" width="70%" alt="Description 1" />
+  <img src="images/images/Synth.jpeg" width="70%" alt="Description 1" />
 </p>
 
 
