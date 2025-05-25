@@ -32,7 +32,6 @@ void FreezeButton::paint (juce::Graphics& g)
     auto baseColour = state ? findColour(onColourId) : findColour(offColourId);
     auto bounds = iconBounds;
 
-    // 배경 채우기: 그라데이션(켜짐) or 단색(꺼짐)
     if (state)
     {
         juce::ColourGradient metallicGradient(
@@ -49,12 +48,10 @@ void FreezeButton::paint (juce::Graphics& g)
 
     g.fillPath(iconPath);
 
-    // 위쪽 하이라이트
     g.setColour(juce::Colours::white.withAlpha(0.2f));
     g.strokePath(iconPath, juce::PathStrokeType(1.5f),
         juce::AffineTransform::translation(0.5f, 0.5f));
 
-    // 아래쪽 그림자
     g.setColour(juce::Colours::black.withAlpha(0.2f));
     g.strokePath(iconPath, juce::PathStrokeType(1.5f),
         juce::AffineTransform::translation(-0.5f, -0.5f));
