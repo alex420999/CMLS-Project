@@ -134,7 +134,7 @@ The interface is modular and responsive, composed of:
 - `EditorContent` – inner component managing all effect controls
 
 <p align="center">
-  <img src="Images/Music Effects Interface picture.JPG" width="70%" />
+  <img src="images/images/Plugin.jpg" width="70%" />
 </p>
 
 #### 🖼️ Layout Features:
