@@ -1,4 +1,4 @@
-<h1 align="center">POLIcalling</h1>
+<h1 align="center">POLICalling</h1>
 
 ## Introduction
 
