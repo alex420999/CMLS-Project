@@ -11,7 +11,7 @@ The POLICalling project is an advanced synthesizer system designed for real-time
 
 
 <p align="center">
-  <img src="images/POLIcallingSystem.jpeg" width="70%" alt="Description 1" />
+  <img src="images/POLIcallingSystem.png" width="70%" alt="Description 1" />
 </p>
 
 A complete data flow: Arduino → Processing → SuperCollider → DAW + JUCE Plugin.  
